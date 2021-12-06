@@ -4,6 +4,7 @@ import json
 from bson.json_util import dumps
 from bson.objectid import ObjectId
 import logging
+import os
 
 def main(req: func.HttpRequest) -> func.HttpResponse:
 
@@ -14,7 +15,7 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
     
     if id:
         try:
-            url = "mongodb://myneighborlycosmosdb:vUbZ1nPWdZv2dsSEVcJlN78zVjZl47gM81v133Mdsp6W4Oq0wKG5QwcHVzKyxcYy1HJBPDBsfRl7900BOnMTGQ==@myneighborlycosmosdb.mongo.cosmos.azure.com:10255/?ssl=true&replicaSet=globaldb&retrywrites=false&maxIdleTimeMS=120000&appName=@myneighborlycosmosdb@"  # TODO: Update with appropriate MongoDB connection information
+            url = os.environ["mongodb://myneighborlycosmosdb:vUbZ1nPWdZv2dsSEVcJlN78zVjZl47gM81v133Mdsp6W4Oq0wKG5QwcHVzKyxcYy1HJBPDBsfRl7900BOnMTGQ==@myneighborlycosmosdb.mongo.cosmos.azure.com:10255/?ssl=true&replicaSet=globaldb&retrywrites=false&maxIdleTimeMS=120000&appName=@myneighborlycosmosdb@"]  # TODO: Update with appropriate MongoDB connection information
             client = pymongo.MongoClient(url)
             database = client['myneighborlydb']
             collection = database['advertisement']
