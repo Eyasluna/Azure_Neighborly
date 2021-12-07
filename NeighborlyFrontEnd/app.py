@@ -1,7 +1,6 @@
-import sys 
-print(sys.path)
-sys.path.append("/Users/yibofu/Dropbox/Udacity/azure/Azure_Neighborly/NeighborlyFrontEnd")
-
+import sys
+#sys.path.append("/Users/yibofu/Dropbox/Udacity/azure/Azure_Neighborly/NeighborlyFrontEnd")
+sys.path.append(r"C:\Users\yibom\Dropbox\Udacity\azure\Azure_Neighborly\NeighborlyFrontEnd")
 
 import logging.config
 import os
